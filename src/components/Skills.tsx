@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Code2, Server, Layout, Database, Wrench } from 'lucide-react';
+import { Code2, Server, Layout, Database, Wrench, Sparkles } from 'lucide-react';
 
 export function Skills() {
   const skillCategories = [
@@ -10,6 +10,7 @@ export function Skills() {
       skills: [
         { name: 'JavaScript', level: 95 },
         { name: 'TypeScript', level: 90 },
+        { name: 'Python', level: 70 },
         { name: 'C/C++', level: 75 },
       ],
     },
@@ -19,8 +20,8 @@ export function Skills() {
       color: '#3FB950',
       skills: [
         { name: 'Node.js', level: 95 },
-        { name: 'NestJS', level: 85 },
-        { name: 'Express', level: 95 },
+        { name: 'Fastify', level: 88 },
+        { name: 'Express', level: 92 },
         { name: 'REST APIs', level: 90 },
       ],
     },
@@ -45,6 +46,17 @@ export function Skills() {
         { name: 'SQL', level: 85 },
         { name: 'Redis', level: 80 },
         { name: 'VectorDB', level: 75 },
+      ],
+    },
+    {
+      title: 'Currently Learning',
+      icon: Sparkles,
+      color: '#A371F7',
+      skills: [
+        { name: 'Generative AI', level: 65 },
+        { name: 'Python for AI', level: 70 },
+        { name: 'LLMs & Prompting', level: 68 },
+        { name: 'RAG basics', level: 60 },
       ],
     },
     {
@@ -73,7 +85,9 @@ export function Skills() {
               Skills & Technologies
             </span>
           </h2>
-          <p className="text-gray-400 text-center mb-12">My technical expertise</p>
+          <p className="text-gray-400 text-center mb-12">
+            Production stack plus what I am actively learning: GenAI, Python, and LLMs
+          </p>
 
           {/* Skills Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -146,17 +160,17 @@ export function Skills() {
             <h3 className="text-xl font-bold text-center mb-6 text-gray-300">Also Working With</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                'Microservices',
+                'Fastify',
+                'PostgreSQL',
+                'Python',
+                'GenAI',
+                'LLMs',
                 'JWT Auth',
                 'RBAC',
-                'BigQuery',
-                'Payment APIs',
-                'AI Integration',
-                'WebSockets',
-                'GraphQL',
-                'Prisma',
-                'Stripe',
-                'AWS',
+                'MQTT',
+                'Event-Driven',
+                'AWS S3',
+                'Docker',
                 'CI/CD',
               ].map((tech, index) => (
                 <motion.span

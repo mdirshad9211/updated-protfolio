@@ -7,33 +7,71 @@ export function Experience() {
 
   const experiences = [
     {
-      role: 'Software Engineer',
-      company: 'Raymoon Services',
-      period: 'Mar 2025 – Present',
+      role: 'Product Specialist',
+      company: 'Raymoon Group',
+      period: 'Dec 2025 – Present',
       type: 'Current',
       responsibilities: [
-        'Architected and deployed Node.js microservices handling 10K+ daily transactions',
-        'Integrated FinTech payment gateways with secure transaction processing',
-        'Built comprehensive RBAC systems for government compliance projects',
-        'Implemented BigQuery analytics pipeline for real-time data insights',
-        'Developed cross-platform features in React Native for mobile applications',
-        'Led code reviews and mentored junior developers on best practices',
+        'Own product and engineering delivery for internal platforms around staffing, payroll, and operations workflows',
+        'Build and ship backend services and dashboards used by operations teams across clients and sites',
+        'Collaborate with stakeholders to turn business requirements into reliable APIs, RBAC, and admin tooling',
+        'Improve platform stability, data quality, and day-to-day usability for recruitment and payroll products',
       ],
-      tech: ['Node.js', 'Microservices', 'BigQuery', 'React Native', 'Payment APIs', 'RBAC'],
+      tech: ['Node.js', 'React', 'MongoDB', 'REST APIs', 'RBAC', 'Product'],
     },
     {
-      role: 'Software Engineer Trainee',
-      company: 'Raymoon Services',
-      period: 'Mar 2024 – Jun 2024',
-      type: 'Training',
+      role: 'Freelance Full Stack Developer',
+      company: 'Independent',
+      period: '2024 – Present',
+      type: 'Freelance',
       responsibilities: [
-        'Developed secure JWT-based authentication systems with refresh token rotation',
-        'Integrated AI chatbot using GPT API for customer support automation',
-        'Built role-based admin dashboards with granular permission controls',
-        'Implemented RESTful APIs with comprehensive error handling and logging',
-        'Collaborated with senior engineers on production deployment strategies',
+        'Delivered a lab management system covering patients, tests, sample tracking, reports, and staff roles',
+        'Built an inventory management system on Fastify and PostgreSQL for SKUs, stock movement, suppliers, and reporting',
+        'Designed a social media backend with Fastify and PostgreSQL: auth, profiles, posts, feeds, likes, comments, and media APIs',
+        'Shipped an e-commerce website with catalog, cart, orders, and an admin panel for store operations',
+        'Created a clinic website with services, doctor profiles, and appointment inquiry flows for patients',
+        'Worked directly with clients on requirements, delivery, and production support',
       ],
-      tech: ['JWT', 'Express', 'AI Integration', 'React', 'REST APIs', 'MongoDB'],
+      tech: ['Fastify', 'PostgreSQL', 'React', 'Node.js', 'JWT', 'Client Delivery'],
+    },
+    {
+      role: 'Software Engineer',
+      company: 'Blu Parrot',
+      period: 'Jul 2025 – Dec 2025',
+      type: 'Full-time',
+      responsibilities: [
+        'Led development of a multi-level authentication system using Node.js, Express.js, and JWT',
+        'Designed RBAC dashboards in React and Tailwind CSS for users with different access levels',
+        'Integrated an AI chatbot and job-description filtering tool to automate candidate-job matching',
+        'Worked with backend, design, and product teams on end-to-end frontend and API integration',
+        'Improved performance, code quality, and security across REST APIs and encryption flows',
+      ],
+      tech: ['Node.js', 'Express', 'JWT', 'React', 'Tailwind CSS', 'AI Chatbot'],
+    },
+    {
+      role: 'Software Engineer Intern',
+      company: 'Blu Parrot',
+      period: 'Mar 2025 – Jul 2025',
+      type: 'Internship',
+      responsibilities: [
+        'Contributed to multi-level authentication with Node.js, Express.js, and JWT',
+        'Helped build role-based dashboards in React and Tailwind CSS',
+        'Implemented an AI-driven chatbot and JD filtering to improve recruitment workflows',
+        'Integrated frontend and backend services and took part in reviews, debugging, and refactors',
+      ],
+      tech: ['Node.js', 'React', 'JWT', 'RBAC', 'REST APIs'],
+    },
+    {
+      role: 'Software Engineer Intern',
+      company: 'TechnopediaSoft',
+      period: 'Feb 2025 – Mar 2025',
+      type: 'Internship',
+      responsibilities: [
+        'Built RBAC for a complex e-commerce platform so permissions stayed secure and manageable',
+        'Designed a React admin panel for products, orders, and users',
+        'Contributed to Node.js and Express APIs and helped ship features that improved operations',
+      ],
+      tech: ['React', 'Node.js', 'Express', 'RBAC', 'E-commerce'],
     },
   ];
 
@@ -51,40 +89,38 @@ export function Experience() {
               Experience
             </span>
           </h2>
-          <p className="text-gray-400 text-center mb-12">My professional journey</p>
+          <p className="text-gray-400 text-center mb-12">
+            Product, engineering, internships, and freelance client work
+          </p>
 
-          {/* Timeline */}
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-0 md:left-8 top-0 bottom-0 w-0.5 bg-[#30363D]"></div>
 
             <div className="space-y-8">
               {experiences.map((exp, index) => (
                 <motion.div
-                  key={index}
+                  key={`${exp.company}-${exp.role}-${exp.period}`}
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
+                  transition={{ delay: index * 0.12, duration: 0.6 }}
                   className="relative"
                 >
-                  {/* Commit dot */}
                   <div className="absolute left-0 md:left-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#58A6FF] border-4 border-[#0D1117] z-10 shadow-lg shadow-[#58A6FF]/50"></div>
 
-                  {/* Content Card */}
                   <motion.div
                     className="ml-8 md:ml-16 bg-[#161B22] border border-[#30363D] rounded-lg overflow-hidden cursor-pointer"
+                    onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
                     onHoverStart={() => setExpandedIndex(index)}
                     onHoverEnd={() => setExpandedIndex(null)}
-                    whileHover={{ 
+                    whileHover={{
                       borderColor: '#58A6FF',
                       boxShadow: '0 0 20px rgba(88, 166, 255, 0.2)',
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    {/* Header */}
                     <div className="p-6">
-                      <div className="flex items-start justify-between mb-3">
+                      <div className="flex items-start justify-between mb-3 gap-4">
                         <div className="flex items-center gap-3">
                           <div className="p-2 bg-[#0D1117] rounded-lg border border-[#30363D]">
                             <Briefcase className="w-5 h-5 text-[#58A6FF]" />
@@ -94,25 +130,28 @@ export function Experience() {
                             <p className="text-[#58A6FF]">{exp.company}</p>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <div className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                            exp.type === 'Current' 
-                              ? 'bg-[#3FB950]/10 text-[#3FB950] border border-[#3FB950]/30' 
-                              : 'bg-[#58A6FF]/10 text-[#58A6FF] border border-[#58A6FF]/30'
-                          }`}>
+                        <div className="text-right shrink-0">
+                          <div
+                            className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                              exp.type === 'Current'
+                                ? 'bg-[#3FB950]/10 text-[#3FB950] border border-[#3FB950]/30'
+                                : exp.type === 'Freelance'
+                                  ? 'bg-[#D29922]/10 text-[#D29922] border border-[#D29922]/30'
+                                  : 'bg-[#58A6FF]/10 text-[#58A6FF] border border-[#58A6FF]/30'
+                            }`}
+                          >
                             {exp.type}
                           </div>
                           <p className="text-sm text-gray-400 mt-2 font-mono">{exp.period}</p>
                         </div>
                       </div>
 
-                      {/* Responsibilities */}
                       <motion.ul
                         className="space-y-2 mb-4"
                         initial={false}
-                        animate={{ 
+                        animate={{
                           height: expandedIndex === index ? 'auto' : '120px',
-                          overflow: 'hidden' 
+                          overflow: 'hidden',
                         }}
                       >
                         {exp.responsibilities.map((resp, i) => (
@@ -123,7 +162,6 @@ export function Experience() {
                         ))}
                       </motion.ul>
 
-                      {/* Tech Stack Badges */}
                       <div className="flex flex-wrap gap-2 mt-4">
                         {exp.tech.map((tech, i) => (
                           <motion.span
@@ -140,11 +178,8 @@ export function Experience() {
                       </div>
                     </div>
 
-                    {/* Expand Indicator */}
                     {expandedIndex !== index && exp.responsibilities.length > 3 && (
-                      <div className="px-6 pb-4 text-xs text-gray-500">
-                        Hover to see more...
-                      </div>
+                      <div className="px-6 pb-4 text-xs text-gray-500">Hover or tap to see more...</div>
                     )}
                   </motion.div>
                 </motion.div>

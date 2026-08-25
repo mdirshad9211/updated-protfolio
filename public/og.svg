@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0D1117"/>
+  <circle cx="180" cy="120" r="160" fill="#58A6FF" opacity="0.12"/>
+  <circle cx="1080" cy="520" r="180" fill="#3FB950" opacity="0.12"/>
+  <text x="80" y="220" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#FFFFFF">Md Irshad</text>
+  <text x="80" y="290" font-family="Inter, Arial, sans-serif" font-size="32" fill="#58A6FF">Full Stack Software Engineer</text>
+  <text x="80" y="360" font-family="Inter, Arial, sans-serif" font-size="24" fill="#8B949E">Backend · Fastify · PostgreSQL · React · Sarkora.in</text>
+  <text x="80" y="520" font-family="JetBrains Mono, monospace" font-size="22" fill="#3FB950">itsmdirshad.netlify.app</text>
+</svg>

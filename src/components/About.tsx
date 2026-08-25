@@ -9,26 +9,26 @@ export function About() {
     {
       command: 'whoami',
       output: [
-        'Software Engineer at Raymoon Services',
-        'Backend-heavy Full Stack Engineer',
-        'Specializing in scalable microservices & AI systems',
+        'Product Specialist at Raymoon Group',
+        'Freelance Full Stack Developer',
+        'Founder of Sarkora.in for exam aspirants',
       ]
     },
     {
       command: 'experience --list',
       output: [
-        '✓ FinTech payment integrations & secure transactions',
-        '✓ GovTech RBAC systems & role-based dashboards',
-        '✓ AI-powered platforms & chatbot integration',
-        '✓ BigQuery analytics & data pipeline architecture',
-        '✓ React Native mobile feature development',
+        '✓ Fastify + PostgreSQL inventory and social backends',
+        '✓ Freelance lab, clinic, and e-commerce builds',
+        '✓ Auth, JWT, and RBAC dashboards at Blu Parrot',
+        '✓ AI chatbot and JD matching for recruitment',
+        '✓ Sarkora.in — jobs, results, admit cards, and PYQs',
       ]
     },
     {
       command: 'interests --show',
       output: [
+        '🤖  GenAI, Python, and LLMs — currently learning',
         '🏗️  Scalable architecture & system design',
-        '🤖 AI integration & automation',
         '⚡ Performance optimization',
         '🔐 Security & authentication systems',
       ]
@@ -147,16 +147,21 @@ export function About() {
             </div>
             <div className="prose prose-invert max-w-none">
               <p className="text-gray-400 leading-relaxed">
-                I'm a passionate Full Stack Software Engineer with a strong focus on backend development and AI integration. 
-                Currently working at <span className="text-[#58A6FF]">Raymoon Services</span>, I specialize in building 
-                scalable microservices, implementing secure authentication systems, and integrating AI capabilities into 
-                production applications. My experience spans across FinTech, GovTech, and AI-driven platforms where I've 
-                delivered robust solutions that handle real-world complexity.
+                I'm a backend-focused Full Stack Software Engineer currently working as a{' '}
+                <span className="text-[#58A6FF]">Product Specialist at Raymoon Group</span>. I also work independently
+                as a freelancer, shipping production systems for labs, clinics, inventory operations (Fastify +
+                PostgreSQL), social products (Fastify + PostgreSQL), and e-commerce. Alongside client work I built{' '}
+                <a href="https://sarkora.in" target="_blank" rel="noopener noreferrer" className="text-[#3FB950] hover:underline">
+                  Sarkora.in
+                </a>
+                , a live platform that centralizes government jobs, results, admit cards, and previous year papers for
+                competitive exam aspirants.
               </p>
               <p className="text-gray-400 leading-relaxed mt-4">
-                I thrive on solving challenging problems through clean architecture, automation, and continuous learning. 
-                Whether it's designing RBAC systems for government projects or building AI-powered platforms, 
-                I focus on creating solutions that are maintainable, performant, and scalable.
+                Previously at Blu Parrot I worked on multi-level authentication, RBAC dashboards, and AI-assisted
+                recruitment tooling. I am currently deepening my skills in Generative AI, Python, and large language
+                models so I can ship AI-ready backends. I care about clean APIs, secure access control, and products
+                people can actually use.
               </p>
             </div>
           </motion.div>

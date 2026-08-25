@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 export function Hero() {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'Full Stack Software Engineer | Backend | AI-Ready Systems';
+  const fullText = 'Full Stack Software Engineer | Backend | Building Sarkora.in';
   
   useEffect(() => {
     let currentIndex = 0;
@@ -21,9 +21,9 @@ export function Hero() {
   }, []);
 
   const stats = [
-    { label: 'Experience', value: '2+ Years' },
-    { label: 'Projects', value: '15+' },
-    { label: 'Tech Stack', value: '20+' },
+    { label: 'Experience', value: '1.5+ Years' },
+    { label: 'Projects', value: '20+' },
+    { label: 'GitHub Repos', value: '43' },
   ];
 
   const handleSearchClick = () => {
@@ -32,7 +32,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden pt-16" aria-labelledby="hero-heading">
       {/* Gradient background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-[#58A6FF] rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-pulse"></div>
@@ -47,14 +47,22 @@ export function Hero() {
           className="text-center"
         >
           {/* Name */}
-          <motion.h1 
-            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
+          <p className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#3FB950]/10 text-[#3FB950] border border-[#3FB950]/30">
+            Currently learning GenAI · Python · LLMs
+          </p>
+          <motion.h1
+            id="hero-heading"
+            className="text-5xl sm:text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
             Md Irshad
           </motion.h1>
+          <p className="sr-only">
+            Full Stack Software Engineer specializing in backend development, Fastify, PostgreSQL, React, and
+            Generative AI. Founder of Sarkora.in.
+          </p>
 
           {/* Typing animation subtitle */}
           <motion.div
@@ -76,7 +84,9 @@ export function Hero() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto"
           >
-            Building scalable backend systems, microservices, and AI-powered platforms.
+            Backend-focused full stack engineer shipping Fastify and PostgreSQL client systems, plus{' '}
+            <a href="https://sarkora.in" className="text-[#3FB950] hover:underline">Sarkora.in</a>{' '}
+            for government exam aspirants. Currently upskilling in GenAI, Python, and LLMs.
           </motion.p>
 
           {/* AI Search Bar */}
@@ -169,6 +179,7 @@ export function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -3 }}
               className="text-gray-400 hover:text-[#58A6FF] transition-colors"
+              aria-label="GitHub profile of Md Irshad"
             >
               <Github className="w-6 h-6" />
             </motion.a>
@@ -178,6 +189,7 @@ export function Hero() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -3 }}
               className="text-gray-400 hover:text-[#58A6FF] transition-colors"
+              aria-label="LinkedIn profile of Md Irshad"
             >
               <Linkedin className="w-6 h-6" />
             </motion.a>
@@ -185,6 +197,7 @@ export function Hero() {
               href="mailto:irshadmd.edu@gmail.com"
               whileHover={{ scale: 1.2, y: -3 }}
               className="text-gray-400 hover:text-[#58A6FF] transition-colors"
+              aria-label="Email Md Irshad"
             >
               <Mail className="w-6 h-6" />
             </motion.a>

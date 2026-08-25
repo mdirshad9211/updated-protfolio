@@ -1,21 +1,28 @@
 import { motion } from 'motion/react';
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, Sparkles } from 'lucide-react';
 
 export function Education() {
   const education = [
     {
       degree: 'B.Tech in Computer Science',
-      institution: 'AKTU (Dr. A.P.J. Abdul Kalam Technical University)',
-      period: '2020 - 2024',
+      institution: 'AXIS Institute of Technology and Management, Kanpur (AKTU)',
+      period: '2021 – 2025',
       icon: GraduationCap,
       color: '#58A6FF',
     },
     {
-      degree: 'Full Stack Web Development Bootcamp',
+      degree: 'The Complete 2024 Web Development Bootcamp',
       institution: 'Udemy',
-      period: '2023',
+      period: 'Issued Oct 2023',
       icon: Award,
       color: '#3FB950',
+    },
+    {
+      degree: 'Generative AI, Python & LLMs',
+      institution: 'Self-directed — APIs, prompting, RAG, and Python tooling',
+      period: 'Currently learning',
+      icon: Sparkles,
+      color: '#A371F7',
     },
   ];
 
@@ -35,7 +42,7 @@ export function Education() {
           </h2>
           <p className="text-gray-400 text-center mb-12">Academic background and continuous learning</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {education.map((edu, index) => {
               const Icon = edu.icon;
               return (

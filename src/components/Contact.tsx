@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, Copy, Check } from 'lucide-react';
+import { Github, Linkedin, Mail, Copy, Check, Globe } from 'lucide-react';
+import { SITE_URL } from '../seo';
 import { useState } from 'react';
 
 export function Contact() {
@@ -29,6 +30,13 @@ export function Contact() {
       username: 'Md Irshad',
     },
     {
+      name: 'Sarkora',
+      icon: Globe,
+      url: 'https://sarkora.in',
+      color: '#3FB950',
+      username: 'sarkora.in',
+    },
+    {
       name: 'Email',
       icon: Mail,
       url: `mailto:${email}`,
@@ -38,7 +46,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 bg-[#0D1117]">
+    <section id="contact" className="py-20 px-4 bg-[#0D1117]" aria-labelledby="contact-heading">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +54,7 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold mb-4 text-center">
+          <h2 id="contact-heading" className="text-4xl font-bold mb-4 text-center">
             <span className="bg-gradient-to-r from-[#58A6FF] to-[#3FB950] bg-clip-text text-transparent">
               Let's Connect
             </span>
@@ -56,7 +64,7 @@ export function Contact() {
           </p>
 
           {/* Social Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {socials.map((social, index) => {
               const Icon = social.icon;
               const isEmail = social.name === 'Email';
@@ -127,7 +135,10 @@ export function Contact() {
               Built with React, Tailwind CSS, and Motion
             </p> */}
             <p className="text-gray-600 text-sm font-mono">
-              © 2026 Md Irshad. All rights reserved.
+              © {new Date().getFullYear()} Md Irshad · Full Stack Software Engineer ·{' '}
+              <a href={SITE_URL} className="hover:text-[#58A6FF]">{SITE_URL.replace('https://', '')}</a>
+              {' · '}
+              <a href="https://sarkora.in" className="hover:text-[#3FB950]">sarkora.in</a>
             </p>
           </motion.div>
         </motion.div>
